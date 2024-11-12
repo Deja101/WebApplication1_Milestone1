@@ -14,7 +14,34 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMP+8Zm35Uio3THD53nP1/P6z1I5GGgB7u5l6R" crossorigin="anonymous">
 
+    <style>
+        .cart-button {
+            background-color: #ffffff; 
+            color: #000000; 
+            border: 1px solid #000000; 
+            position: relative; /* Allows positioning of notification */
+            padding: 8px 12px; /* Adjust padding for better appearance */
+        }
+        .cart-button i {
+            margin-right: 5px; /* Space between icon and text */
+        }
+        .cart-notification {
+            position: absolute;
+            top: -10px; /* Position above the cart icon */
+            right: -10px; /* Position to the right */
+            background: #ff0000; /* Notification background color */
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -37,11 +64,11 @@
             </Scripts>
         </asp:ScriptManager>
 
-<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-    <div class="container" style="color: #009900; margin-bottom: 0px;">
-        <a class="navbar-brand" runat="server" href="~/" style="font-family: 'Lobster', cursive; font-size: 28px;">
-            Bingy's Essentials
-        </a>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            <div class="container" style="color: #009900; margin-bottom: 0px;">
+                <a class="navbar-brand" runat="server" href="~/" style="font-family: 'Lobster', cursive; font-size: 28px;">
+                    Bingy's Essentials
+                </a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -52,32 +79,27 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Product" style="color: #009933">Product</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/About" style="color: #009933">About</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact" style="color: #009933">Contact</a></li>
-                      
+                       
                     </ul>
-                     
-            <ul class="navbar-nav">
-                <ul class="navbar-nav">
-    <li class="nav-item ms-auto">
-        <a class="nav-link btn login-button" runat="server" href="~/Login" style="background-color: #FFFFFF; color: #000000; border: 1px solid #000000;">
-            Login
-        </a>
-    </li>
-    <li class="nav-item ms-auto">
-        &nbsp;
-    </li>
-</ul>
+                   
+                    <ul class="navbar-nav">
+                        <li class="nav-item ms-auto">
+                            <a class="nav-link btn login-button" runat="server" href="~/Login" style="background-color: #FFFFFF; color: #000000; border: 1px solid #000000;">
+                               Login 
+                
+                            </a>
+                        </li>
+                    </ul>
 
-
-            </ul>
-                 <ul class="navbar-nav">
+                    <!-- Cart Button with Shipping Cart Icon -->
+                    <ul class="navbar-nav">
     <li class="nav-item ms-auto">
-        <a class="nav-link btn signup-button" runat="server" href="~/signup" style="background-color: #FFFFFF; color: #000000; border: 1px solid #000000;">
-            Signup
-        </a>
+      <a class="nav-link btn cart-button" runat="server" href="~/Cart.aspx" style="background-color: #FFFFFF; color: #000000; border: 1px solid #000000;">
+    <i class="fas fa-shopping-cart"></i> Cart
+</a>
     </li>
 </ul>
-
-                </ul>
+                  
                 </div>
             </div>
         </nav>
@@ -86,7 +108,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; teTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>
         </div>
     </form>
@@ -95,3 +117,4 @@
     </asp:PlaceHolder>
 </body>
 </html>
+

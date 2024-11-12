@@ -18,4 +18,5 @@ namespace WebApplication1_Milestone1
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
+
 }

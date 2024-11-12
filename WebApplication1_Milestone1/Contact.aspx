@@ -55,9 +55,5 @@
                 </div>
             </div>
         </section>
-
-      
-            </div>
-        </section>
-    </main>
+       </main>
 </asp:Content>
